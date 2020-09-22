@@ -6,8 +6,29 @@ h1, h2{
 	border-left: 5px #666 solid;
 	border-bottom: 1px #666 solid;
 	padding: 0 0 5px 10px;
-
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
+
+
+#gallery img{
+	width: 100%;
+}
+
+.col-lg-3{
+	padding-right:  0px !important;
+	padding-left: 0px !important;
+}
+
+footer{
+	margin-top: 30px;
+	height: 40px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	padding-top: 10px;
+}
+
 
 
 
