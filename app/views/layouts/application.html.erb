@@ -10,6 +10,44 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">My Gallery</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_path%>
+          </li>
+          <% @categoryNav.each do |category|%>
+            <li><%= link_to category.name, category_path(category.id)%></li>>
+          <%end%>
+          
+        </ul>
+
+        <ul class="navbar-nav mr-right">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Upload photo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Add category</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<section>
+    <div role="main" class="container">
+      <%= yield %>
+    </div><!-- /.container -->  
+</section>
+
+<footer>
+  <p>Copyright &copy; 2020 My Gallery</p>
+</footer>
   </body>
 </html>
