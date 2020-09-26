@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <title>TestGallery</title> -->
+    <title>TestGallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "TestGallery" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TestGallery" %>">
+    <!-- <title><%= content_for?(:title) ? yield(:title) : "TestGallery" %></title> -->
+    <!-- <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TestGallery" %>"> -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
   <body>
@@ -34,10 +37,10 @@
 
         <ul class="navbar-nav mr-right">
           <li class="nav-item ">
-            <%= link_to "Upload Photo" upload_path%>
+            <%= link_to "Upload Photo", upload_path%>
           </li>
           <li class="nav-item">
-            <%= link_to "Add Category" new_category_path%>
+            <%= link_to "Add Category", new_category_path%>
           </li>
         </ul>
       </div>
