@@ -23,21 +23,21 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item  p-3">
             <%= link_to "Home", root_path%>
           </li>
           <% @categoryNav.each do |category|%>
-            <li><%= link_to category.name, category_path(category.id)%></li>>
+            <li class="nav-item p-3 "><%= link_to category.name, category_path(category.id)%></li>
           <%end%>
           
         </ul>
 
         <ul class="navbar-nav mr-right">
           <li class="nav-item ">
-            <a class="nav-link" href="#">Upload photo</a>
+            <%= link_to "Upload Photo" upload_path%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Add category</a>
+            <%= link_to "Add Category" new_category_path%>
           </li>
         </ul>
       </div>
@@ -45,6 +45,12 @@
 
 <section>
     <div  class="container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success"><%= flash[:notice]%></div>
+      <%end%>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger"><%= flash[:alert]%></div>
+      <%end%>
       <%= yield %>
     </div><!-- /.container -->  
 </section>
