@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestGallery</title>
+    <!-- <title>TestGallery</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "TestGallery" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "TestGallery" %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,7 +18,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a class="navbar-brand" href="#">My Gallery</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -41,7 +44,7 @@
     </nav>
 
 <section>
-    <div role="main" class="container">
+    <div  class="container">
       <%= yield %>
     </div><!-- /.container -->  
 </section>
