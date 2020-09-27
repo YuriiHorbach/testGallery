@@ -32,6 +32,7 @@ gem 'bootstrap'
 gem 'sprockets-rails'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
+gem 'carrierwave', '~> 2.0'
 
 
 group :development, :test do
