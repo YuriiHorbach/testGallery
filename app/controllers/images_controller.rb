@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
 
     if @image.save
-      flash[:notice] = 'Image uploaded'
+      flash[:notice] = 'Image created'
       redirect_to root_path
     else
       render 'new'
@@ -15,12 +15,41 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+  	@image = Image.find(params[:id])
+  	@image.destroy
+
+  	flash[:notice] = "Image deleted"
+
+  	redirect_to images_path
   end
 
   def index
   	@images = Image.all
   	@categories = Category.all
   end
+
+  # def update
+  #   @image = Image.find(params[:id])
+
+  #   if @image.update(image_params)
+  #     flash[:notice] = 'Category updated'
+  #     redirect_to root_path
+  #   end
+  # end
+
+  # def update
+		# if @@image.update_attributes(image_params)
+		# 	redirect_to root_path
+		# else
+		# 	render :edit
+		# end
+
+		# @category = Category.find(params[:id])
+  #   @categories = Category.all
+    # @images = @category.images
+
+	# end
+
 
   private
 

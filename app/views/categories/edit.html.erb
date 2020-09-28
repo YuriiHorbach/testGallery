@@ -15,7 +15,7 @@
 	<%=link_to "Cancel", categories_path, class:'btn btn-default'%>
 <%end%>
 
-<h3 class="page-header">Images in <%= @category.name%></h3>
+<h3 class="page-header">Images in: <%= @category.name%></h3>
 <hr>
 <div id="edit_images">
 	<% if @images.exists?%>
