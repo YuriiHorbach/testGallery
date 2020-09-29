@@ -1,4 +1,10 @@
 class ImagesController < ApplicationController
+  
+  def index
+  	@images = Image.all
+  	@categories = Category.all
+  end
+
   def new
   	@image = Image.new
   end
@@ -18,15 +24,12 @@ class ImagesController < ApplicationController
   	@image = Image.find(params[:id])
   	@image.destroy
 
-  	flash[:notice] = "Image deleted"
+  	flash[:notice] = 'Image deleted'
 
   	redirect_to images_path
   end
 
-  def index
-  	@images = Image.all
-  	@categories = Category.all
-  end
+  
 
   # def update
   #   @image = Image.find(params[:id])

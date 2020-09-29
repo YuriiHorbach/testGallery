@@ -19,12 +19,12 @@
 <hr>
 <div id="edit_images">
 	<% if @images.exists?%>
-			<%@images.each_slice(6) do |image|%>
+			<% @images.each_slice(6) do |image|%>
 				<div class="row">
-					<%image.each do |image|%>
+					<% image.each do |img|%>
 						<div class="col-lg-2">
-							<%= image_tag image.image_url(:thumb)%>
-							<center><%= link_to "Delete", image_path(image), class:'delete', method: :delete, data:{confirm: 'Are you sure?'}%>
+							<%= image_tag img.image_url(:thumb)%>
+							<center><%= link_to "Delete", image_path(img), class:'delete', method: :delete, data:{confirm: 'Are you sure?'}%>
 							</center>
 						</div>
 					<%end%>
