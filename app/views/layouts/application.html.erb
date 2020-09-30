@@ -32,9 +32,14 @@
           </li>
           <% @categoryNav.each do |category|%>
             <li class="nav-item p-3 "><%= link_to category.name, category_path(category.id)%></li>
+
           <%end%>
+
+          </li>
           
         </ul>
+        
+
 
         <ul class="navbar-nav mr-right">
           <li class="nav-item ">
